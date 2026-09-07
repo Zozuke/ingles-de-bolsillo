@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Constructor de frases · Mi Inglés de Bolsillo</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#16233B">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Inglés Bolsillo">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand-title">Mi Inglés <span class="accent">de Bolsillo</span></span>
+        <span class="brand-tag">Gramática completa, pronunciación guiada y audio real</span>
+      </div>
+      <div class="header-search">
+        <a href="buscador.html">🔍 Buscar cualquier palabra</a>
+      </div>
+    </div>
+  </header>
+  <nav class="tabs-rail">
+    <div class="wrap">
+      <a href="index.html">Inicio</a>
+      <a href="articulos.html">Artículos</a>
+      <a href="sustantivos.html">Sustantivos</a>
+      <a href="pronombres.html">Pronombres</a>
+      <a href="verbos.html">Verbos</a>
+      <a href="adjetivos.html">Adjetivos</a>
+      <a href="adverbios.html">Adverbios</a>
+      <a href="preposiciones.html">Preposiciones</a>
+      <a href="conectores.html">Conectores</a>
+      <a href="auxiliares.html">Auxiliares</a>
+      <a href="determinantes.html">Determinantes</a>
+      <a href="interrogativas.html">Interrogativas</a>
+      <a href="negacion.html">Negación</a>
+      <a href="buscador.html">🔍 Buscador</a>
+      <a href="constructor.html" class="activo">🧩 Constructor de frases</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+      <h1 class="page-title">Constructor de frases</h1>
+      <p class="page-sub">Así se combinan las piezas: Sujeto + Verbo + Artículo + Sustantivo. Empieza viendo estos ejemplos fijos, y luego usa los menús para armar tus propias oraciones — afirmativas, negativas o preguntas, en presente, pasado o futuro, con o sin adjetivo.</p>
+
+      <h2 class="subtitulo-seccion" style="margin-top:0;">Ejemplo: cambia solo el sustantivo</h2>
+      <ul class="lista-entradas" id="ejemplos-iniciales"></ul>
+
+      <h2 class="subtitulo-seccion">Ahora también puedes: negar, preguntar, describir, cambiar de tiempo</h2>
+      <ul class="lista-entradas" id="ejemplos-ampliados"></ul>
+
+      <h2 class="subtitulo-seccion">Ahora arma tú la frase</h2>
+      <div class="constructor-box">
+        <div class="selectores">
+          <div class="selector-campo">
+            <label for="sel-tipo">Tipo de oración</label>
+            <select id="sel-tipo">
+              <option value="afirmativa">Afirmativa</option>
+              <option value="negativa">Negativa</option>
+              <option value="pregunta">Pregunta</option>
+            </select>
+          </div>
+          <div class="selector-campo">
+            <label for="sel-tiempo">Tiempo</label>
+            <select id="sel-tiempo">
+              <option value="presente">Presente</option>
+              <option value="pasado">Pasado</option>
+              <option value="futuro">Futuro</option>
+            </select>
+          </div>
+          <div class="selector-campo">
+            <label for="sel-sujeto">Sujeto</label>
+            <select id="sel-sujeto"></select>
+          </div>
+          <div class="selector-campo">
+            <label for="sel-verbo">Verbo</label>
+            <select id="sel-verbo"></select>
+          </div>
+          <div class="selector-campo">
+            <label for="sel-adjetivo">Adjetivo (opcional)</label>
+            <select id="sel-adjetivo"></select>
+          </div>
+          <div class="selector-campo">
+            <label for="sel-sustantivo">Sustantivo</label>
+            <select id="sel-sustantivo"></select>
+          </div>
+          <div class="selector-campo">
+            <label for="sel-cantidad">Cantidad</label>
+            <select id="sel-cantidad">
+              <option value="singular">Uno (a / an)</option>
+              <option value="plural">Varios (some)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="desglose-piezas" id="desglose-piezas"></div>
+
+        <div class="frase-final">
+          <button type="button" id="btn-audio-frase" class="btn-audio" title="Escuchar la frase completa">
+            <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M4 9v6h4l5 5V4L8 9H4z" fill="currentColor"/><path d="M16.5 8.5a5 5 0 010 7" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M19 6a8.5 8.5 0 010 12" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".6"/></svg>
+          </button>
+          <div class="frase-final-texto">
+            <span id="frase-final-en"></span>
+            <span id="frase-final-ph"></span>
+            <span id="frase-final-es"></span>
+          </div>
+        </div>
+        <p class="nota-constructor">Nota: aquí usamos <strong>do / does / did</strong> con todos los verbos (incluido <em>have</em>) para que el patrón de negación y pregunta sea siempre el mismo mientras lo aprendes. Más adelante encontrarás casos especiales como “I haven’t”.</p>
+      </div>
+
+      <h2 class="subtitulo-seccion">Más combinaciones con las mismas piezas</h2>
+      <p class="page-sub" style="margin-top:-4px;">Mismo sujeto, mismo verbo, mismo tiempo y mismo tipo de oración — solo cambia el sustantivo. Así se generan frases nuevas en vez de memorizarlas una por una.</p>
+      <ul class="lista-entradas" id="mas-combinaciones"></ul>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      Hecho para aprender inglés combinando piezas, no memorizando frases sueltas. · El audio usa la voz del propio dispositivo (Web Speech API).
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/conjugator.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/builder.js"></script>
+  <script>initConstructor();</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(console.error);
+  });
+}
+</script>
+</body>
+</html>

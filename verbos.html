@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Verbos conjugados · Mi Inglés de Bolsillo</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#16233B">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Inglés Bolsillo">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand-title">Mi Inglés <span class="accent">de Bolsillo</span></span>
+        <span class="brand-tag">Gramática completa, pronunciación guiada y audio real</span>
+      </div>
+      <div class="header-search">
+        <a href="buscador.html">🔍 Buscar cualquier palabra</a>
+      </div>
+    </div>
+  </header>
+  <nav class="tabs-rail">
+    <div class="wrap">
+      <a href="index.html" class="">Inicio</a>
+      <a href="articulos.html" class="">Artículos</a>
+      <a href="sustantivos.html" class="">Sustantivos</a>
+      <a href="pronombres.html" class="">Pronombres</a>
+      <a href="verbos.html" class="activo">Verbos</a>
+      <a href="adjetivos.html" class="">Adjetivos</a>
+      <a href="adverbios.html" class="">Adverbios</a>
+      <a href="preposiciones.html" class="">Preposiciones</a>
+      <a href="conectores.html" class="">Conectores</a>
+      <a href="auxiliares.html" class="">Auxiliares</a>
+      <a href="determinantes.html" class="">Determinantes</a>
+      <a href="interrogativas.html" class="">Interrogativas</a>
+      <a href="negacion.html" class="">Negación</a>
+      <a href="buscador.html" class="">🔍 Buscador</a>
+      <a href="constructor.html" class="">🧩 Constructor de frases</a>
+    </div>
+  </nav>
+  <main>
+    <div class="wrap">
+      <h1 class="page-title">Verbos conjugados</h1>
+      <p class="page-sub">25 verbos esenciales, cada uno conjugado en 4 tiempos (presente simple, presente continuo, pasado simple y futuro simple) × 6 personas. Toca un verbo para desplegar sus formas.</p>
+      <span id="lista-verbos-contador"></span>
+      
+      
+      <input type="text" id="lista-verbos-filtro" class="filtro-local" placeholder="Filtrar verbos… (ej. 'eat' o 'saber')" autocomplete="off">
+      <div id="lista-verbos"></div>
+    
+    </div>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap">
+      Hecho para aprender inglés combinando piezas, no memorizando frases sueltas. · El audio usa la voz del propio dispositivo (Web Speech API).
+    </div>
+  </footer>
+  <script src="js/data.js"></script>
+  <script src="js/conjugator.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/render.js"></script>
+
+  <script>
+    renderVerbos("lista-verbos");
+  </script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(console.error);
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mi Inglés de Bolsillo — Aprende inglés combinando piezas</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#16233B">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Inglés Bolsillo">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand-title">Mi Inglés <span class="accent">de Bolsillo</span></span>
+        <span class="brand-tag">Gramática completa, pronunciación guiada y audio real</span>
+      </div>
+      <div class="header-search">
+        <a href="buscador.html">🔍 Buscar cualquier palabra</a>
+      </div>
+    </div>
+  </header>
+  <nav class="tabs-rail">
+    <div class="wrap">
+      <a href="index.html" class="activo">Inicio</a>
+      <a href="articulos.html">Artículos</a>
+      <a href="sustantivos.html">Sustantivos</a>
+      <a href="pronombres.html">Pronombres</a>
+      <a href="verbos.html">Verbos</a>
+      <a href="adjetivos.html">Adjetivos</a>
+      <a href="adverbios.html">Adverbios</a>
+      <a href="preposiciones.html">Preposiciones</a>
+      <a href="conectores.html">Conectores</a>
+      <a href="auxiliares.html">Auxiliares</a>
+      <a href="determinantes.html">Determinantes</a>
+      <a href="interrogativas.html">Interrogativas</a>
+      <a href="negacion.html">Negación</a>
+      <a href="buscador.html">🔍 Buscador</a>
+      <a href="constructor.html">🧩 Constructor de frases</a>
+    </div>
+  </nav>
+
+  <section class="hero-home">
+    <div class="wrap">
+      <h1>No memorices frases. Aprende a construirlas.</h1>
+      <p class="hero-desc">Este sitio junta las 12 categorías gramaticales del inglés — artículos, sustantivos, pronombres, verbos conjugados, adjetivos, adverbios, preposiciones, conectores, auxiliares, determinantes, interrogativas y negación — cada palabra con su pronunciación guiada y un botón de audio real. Y luego te enseña a combinarlas para generar oraciones nuevas tú mismo.</p>
+
+      <div class="hero-ejemplo">
+        <div class="hero-ejemplo-formula">
+          I <span class="hero-ejemplo-flecha">+</span> want <span class="hero-ejemplo-flecha">+</span> a <span class="hero-ejemplo-flecha">+</span> car
+        </div>
+        <div class="hero-ejemplo-formula" style="opacity:.7; font-size:.92rem;">
+          Yo <span class="hero-ejemplo-flecha">+</span> quiero <span class="hero-ejemplo-flecha">+</span> un <span class="hero-ejemplo-flecha">+</span> carro
+        </div>
+        <div class="hero-ejemplo-resultado">→ <strong>I want a car.</strong></div>
+        <div class="hero-ejemplo-ph">/ai uánt e kar/</div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="wrap">
+      <h2 class="subtitulo-seccion" style="margin-top:0;">Empieza por aquí</h2>
+      <div class="destacados-grid">
+        <a class="destacado-card" href="constructor.html">
+          <h3>🧩 Constructor de frases</h3>
+          <p>Elige sujeto + verbo + artículo + sustantivo y mira cómo se arma la oración en inglés, con pronunciación y audio. Cambia una pieza y genera una frase distinta al instante.</p>
+        </a>
+        <a class="destacado-card" href="buscador.html">
+          <h3>🔍 Buscador global</h3>
+          <p>Escribe cualquier palabra — en inglés o en español, en cualquier tiempo o persona — y aparece agrupada junto a toda su familia (por ejemplo, busca “comieron” y verás todas las formas de <em>eat</em>).</p>
+        </a>
+        <a class="destacado-card" href="verbos.html">
+          <h3>📖 Verbos conjugados</h3>
+          <p>25 verbos esenciales conjugados en presente, presente continuo, pasado y futuro, en las 6 personas — más de 500 formas listas para escuchar.</p>
+        </a>
+      </div>
+
+      <h2 class="subtitulo-seccion">Las 12 categorías gramaticales</h2>
+      <p class="page-sub" style="margin-top:-4px;">Cada una con decenas de palabras, su pronunciación guiada y audio con la voz de tu dispositivo.</p>
+      <div class="categorias-grid" id="grid-categorias"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      Hecho para aprender inglés combinando piezas, no memorizando frases sueltas. · El audio usa la voz del propio dispositivo (Web Speech API).
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script>
+    const CATEGORIAS_HOME = [
+      { href: "articulos.html", nombre: "Artículos", desc: "un / una / unos / unas → a / an / some", n: Object.values(ARTICULOS).flat().length },
+      { href: "sustantivos.html", nombre: "Sustantivos", desc: "Personas, casa, comida, ciudad, trabajo, naturaleza…", n: Object.values(SUSTANTIVOS).flat().length },
+      { href: "pronombres.html", nombre: "Pronombres", desc: "Sujeto, objeto, posesivos, reflexivos, demostrativos", n: Object.values(PRONOMBRES).flat().length },
+      { href: "verbos.html", nombre: "Verbos", desc: "25 verbos × 4 tiempos × 6 personas", n: 25 },
+      { href: "adjetivos.html", nombre: "Adjetivos", desc: "Tamaño, apariencia, emociones, cualidades", n: Object.values(ADJETIVOS).flat().length },
+      { href: "adverbios.html", nombre: "Adverbios", desc: "Modo, frecuencia, tiempo, lugar, intensidad", n: Object.values(ADVERBIOS).flat().length },
+      { href: "preposiciones.html", nombre: "Preposiciones", desc: "Lugar, movimiento y tiempo", n: Object.values(PREPOSICIONES).flat().length },
+      { href: "conectores.html", nombre: "Conectores", desc: "Y, pero, o, porque, aunque…", n: Object.values(CONECTORES).flat().length },
+      { href: "auxiliares.html", nombre: "Auxiliares", desc: "be, have, do y los verbos modales", n: Object.values(AUXILIARES).flat().length },
+      { href: "determinantes.html", nombre: "Determinantes", desc: "Posesivos, cuantificadores, demostrativos", n: Object.values(DETERMINANTES).flat().length },
+      { href: "interrogativas.html", nombre: "Interrogativas", desc: "Qué, dónde, cuándo, quién, por qué, cómo", n: Object.values(INTERROGATIVAS).flat().length },
+      { href: "negacion.html", nombre: "Negación", desc: "not, never, nothing… y contracciones", n: Object.values(NEGACION).flat().length }
+    ];
+    document.getElementById("grid-categorias").innerHTML = CATEGORIAS_HOME.map(c => `
+      <a class="categoria-tab" href="${c.href}">
+        <span class="num">${c.n}</span>
+        <span class="nombre">${c.nombre}</span>
+        <span class="desc">${c.desc}</span>
+      </a>
+    `).join("");
+  </script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(console.error);
+  });
+}
+</script>
+</body>
+</html>

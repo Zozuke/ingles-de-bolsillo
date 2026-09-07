@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buscador · Mi Inglés de Bolsillo</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#16233B">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Inglés Bolsillo">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <div class="brand">
+        <span class="brand-title">Mi Inglés <span class="accent">de Bolsillo</span></span>
+        <span class="brand-tag">Gramática completa, pronunciación guiada y audio real</span>
+      </div>
+      <div class="header-search">
+        <a href="buscador.html">🔍 Buscar cualquier palabra</a>
+      </div>
+    </div>
+  </header>
+  <nav class="tabs-rail">
+    <div class="wrap">
+      <a href="index.html">Inicio</a>
+      <a href="articulos.html">Artículos</a>
+      <a href="sustantivos.html">Sustantivos</a>
+      <a href="pronombres.html">Pronombres</a>
+      <a href="verbos.html">Verbos</a>
+      <a href="adjetivos.html">Adjetivos</a>
+      <a href="adverbios.html">Adverbios</a>
+      <a href="preposiciones.html">Preposiciones</a>
+      <a href="conectores.html">Conectores</a>
+      <a href="auxiliares.html">Auxiliares</a>
+      <a href="determinantes.html">Determinantes</a>
+      <a href="interrogativas.html">Interrogativas</a>
+      <a href="negacion.html">Negación</a>
+      <a href="buscador.html" class="activo">🔍 Buscador</a>
+      <a href="constructor.html">🧩 Constructor de frases</a>
+    </div>
+  </nav>
+
+  <main>
+    <div class="wrap">
+      <h1 class="page-title">Buscador global</h1>
+      <p class="page-sub">Busca en las 12 categorías y en las más de 500 formas verbales conjugadas a la vez. Si escribes una forma conjugada (en inglés o en español, en cualquier tiempo o persona), aquí aparece agrupada toda su familia de verbo.</p>
+
+      <div class="busqueda-hero">
+        <input type="text" id="input-busqueda" placeholder="Ej: comieron, wanted, un carro, never, trabajo…" autocomplete="off">
+        <div id="resumen-busqueda"></div>
+      </div>
+
+      <div id="resultados-busqueda"></div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      Hecho para aprender inglés combinando piezas, no memorizando frases sueltas. · El audio usa la voz del propio dispositivo (Web Speech API).
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/conjugator.js"></script>
+  <script src="js/speech.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/search.js"></script>
+  <script>initBuscador();</script>
+<script>
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", () => {
+    navigator.serviceWorker.register("sw.js").catch(console.error);
+  });
+}
+</script>
+</body>
+</html>
